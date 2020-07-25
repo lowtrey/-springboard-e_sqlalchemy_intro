@@ -12,6 +12,13 @@ app.config['SECRET_KEY'] = "chickens"
 connect_db(app)
 
 @app.route("/")
-def home_page():
-  """Shows home page"""
-  return render_template("home.html")
+def list_pets():
+  """Shows list of all pets in db"""
+  pets = Pet.query.all()
+  return render_template("list.html", pets=pets)
+
+@app.route("/<int:pet_id>")
+def show_pet(pet_id):
+  """Show details about a single pet"""
+  pet = Pet.query.get_or_404(pet_id)
+  return render_template("details.html", pet=pet)
