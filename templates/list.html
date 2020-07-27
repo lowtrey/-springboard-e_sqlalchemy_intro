@@ -14,6 +14,13 @@
     <li><a href="/{{pet.id}}">{{pet.name}}</a></li>
     {% endfor %}
   </ul>
+  <h2>Add New Pet</h2>
+  <form action="/" method="POST">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="species" placeholder="species">
+    <input type="number" name="hunger" placeholder="hunger">
+    <button>Submit Pet</button>
+  </form>
 </body>
 
 </html>
