@@ -3,7 +3,7 @@ from models import db, connect_db, Pet
 
 app = Flask(__name__)
 
-# Congifure and Initialize Database
+# Configure and Initialize Database
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///pet_shop_db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
